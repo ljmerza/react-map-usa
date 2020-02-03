@@ -1,17 +1,17 @@
 {
-    "name": "react-usa-map",
-    "version": "1.4.0",
+    "name": "react-map-usa",
+    "version": "1.0.0",
     "description": "React component with all USA States with customizable options",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/gabidavila/react-usa-map.git"
+        "url": "https://github.com/ljmerza/react-map-usa.git"
     },
-    "author": "Gabriela D'Avila Ferrara <me@gabriela.io>",
+    "author": "Leonardo Merza <ljmerza@gmail.com>",
     "bugs": {
-        "url": "https://github.com/gabidavila/react-usa-map/issues"
+        "url": "https://github.com/ljmerza/react-map-usa/issues"
     },
-    "homepage": "https://github.com/gabidavila/react-usa-map#readme",
+    "homepage": "https://github.com/ljmerza/react-map-usa#readme",
     "keywords": [
         "react-component",
         "react",
@@ -23,36 +23,42 @@
         "prepublish": "babel --plugins transform-es2015-modules-umd src --ignore __tests__ --out-dir ./dist",
         "lint": "eslint ./src",
         "lintfix": "eslint ./src --fix",
-        "pretest": "yarn run lint",
+        "pretest": "npm run lint",
         "test": "jest --coverage"
     },
+    "babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ]
+    },
     "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.0",
-        "babel-eslint": "^8.0.1",
-        "babel-plugin-inline-json-import": "^0.2.1",
-        "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-        "babel-polyfill": "^6.26.0",
-        "babel-preset-es2015": "^6.24.1",
-        "babel-preset-react": "^6.24.1",
-        "babel-preset-stage-2": "^6.24.1",
-        "enzyme": "^3.1.0",
-        "enzyme-adapter-react-15": "^1.0.1",
-        "eslint": "^4.8.0",
-        "eslint-plugin-babel": "^4.1.2",
-        "eslint-plugin-react": "^7.4.0",
-        "jest": "^24.8.0",
-        "nodemon": "^1.12.1",
-        "react": "^15.4.2",
-        "react-addons-test-utils": "^15.4.2",
-        "react-dom": "^15.4.2",
-        "react-test-renderer": "15"
+        "@babel/preset-env": "^7.7.4",
+        "@babel/preset-react": "^7.7.4",
+        "babel-jest": "^24.9.0",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-15": "^1.4.1",
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-react": "^7.18.3",
+        "jest": "^25.1.0",
+        "nodemon": "^2.0.2",
+        "prettier": "^1.19.1",
+        "react": "^16.12.0",
+        "react-addons-test-utils": "^15.6.2",
+        "react-dom": "^16.12.0",
+        "react-test-renderer": "16"
     },
     "peerDependencies": {
-        "react": "^15.4.2",
-        "react-dom": "^15.4.2"
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0"
     },
     "dependencies": {
         "babel-runtime": "^6.26.0"
+    },
+    "prettier": {
+        "singleQuote": true
     }
 }

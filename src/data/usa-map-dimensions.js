@@ -1,3 +1,3 @@
-import data from "./usa-states-dimensions.json";
+import data from './usa-states-dimensions.json';
 
 export default data;

@@ -5,13 +5,8 @@ import USAState from "./components/USAState";
 
 class USAMap extends React.Component {
 
-  clickHandler = (stateAbbreviation) => {
-    this.props.onClick(stateAbbreviation);
-  };
-
-  mouseOverHandler = (stateAbbreviation) => {
-    this.props.onMouseOver(stateAbbreviation);
-  };
+  clickHandler = (stateAbbreviation) => this.props.onClick && this.props.onClick(stateAbbreviation);
+  mouseOverHandler = (stateAbbreviation) => this.props.onMouseOver && this.props.onMouseOver(stateAbbreviation);
 
   fillStateColor = (state) => {
     if (this.props.customize && this.props.customize[state] && this.props.customize[state].fill) {
@@ -50,7 +45,7 @@ class USAMap extends React.Component {
       />
       paths.push(path);
     };
-    
+
     return paths;
   };
 

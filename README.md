@@ -1,6 +1,6 @@
-# react-usa-map | A simple SVG USA map rendering on React
+# react-map-usa | A simple SVG USA map rendering on React
 
-[![Build Status](https://travis-ci.org/gabidavila/react-usa-map.svg?branch=master)](https://travis-ci.org/gabidavila/react-usa-map) [![codebeat badge](https://codebeat.co/badges/edd62a75-c313-47c7-b239-d1d1848d3621)](https://codebeat.co/projects/github-com-gabidavila-react-usa-map-master)
+[![Build Status](https://travis-ci.org/ljmerza/react-map-usa.svg?branch=master)](https://travis-ci.org/ljmerza/react-map-usa)
 
 This is an alternate version for you that just want a simple customizable map on HTML. This maps shows states delimitations including DC, Alaska, and Hawaii. D3 is not needed.
 
@@ -9,13 +9,13 @@ It uses the [Albers projection](https://en.wikipedia.org/wiki/Albers_projection)
 ## [Live Example](http://react-usa-map-demo.herokuapp.com)
 Live: [http://react-usa-map-demo.herokuapp.com](http://react-usa-map-demo.herokuapp.com)
 
-Code: [http://github.com/gabidavila/react-usa-map-demo](http://github.com/gabidavila/react-usa-map-demo)
+Code: [https://github.com/ljmerza/react-map-usa](https://github.com/ljmerza/react-map-usa)
 
 ## Installation
 
 It requires `react` 15.4.2 or higher, compatible with React 16.0.0. Run:
 
-`yarn add react-usa-map`
+`yarn add react-map-usa`
 
 or
 
@@ -23,14 +23,11 @@ or
 
 ## Usage
 
-The below example shows the mandatory `onClick` event.
-
 ```javascript
 import React, { Component } from 'react';
-import USAMap from "react-usa-map";
+import USAMap from "react-map-usa";
 
 class App extends Component {
-  /* mandatory */
   mapHandler = (event) => {
     alert(event.target.dataset.name);
   };
@@ -55,7 +52,6 @@ import './App.css'; /* optional for styling like the :hover pseudo-class */
 import USAMap from "react-usa-map";
 
 class App extends Component {
-  /* mandatory */
   mapHandler = (event) => {
     alert(event.target.dataset.name);
   };
@@ -106,6 +102,8 @@ path:hover {
 |`height`| The `height` for rendering, numeric, no `px` suffix|
 |`defaultFill`| The default color for filling|
 |`customize`| Optional customization of filling per state |
+|`onClick`| Optional onclick event on a state |
+|`onMouseOver`| Optional onmouseover event on a state |
 
 Additionally each `path` tag has an abbreviation of the current state followed by a `state` class:
 
@@ -119,12 +117,4 @@ Additionally each `path` tag has an abbreviation of the current state followed b
 
 # Sources
 
-The map is sourced from [Wikimedia](https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg) and is under [Creative Commons Attribution-Share Alike 3.0 Unported](https://spdx.org/licenses/CC-BY-SA-3.0.html) license. This package is inspired on the [react-us-state-map](https://npmjs.com/package/react-us-state-map) package, in fact the initial SVG class system is based on it.
-
-# Contributing
-
-Fork and PR. Not much fuss, I will be try to be as responsive as possible.
-
-# Maintainer
-
-Package maintaned by Gabriela D'Ávila Ferrara, [website](http://gabriela.io).
+The map is sourced from [Wikimedia](https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg) and is under [Creative Commons Attribution-Share Alike 3.0 Unported](https://spdx.org/licenses/CC-BY-SA-3.0.html) license. This package is inspired on the [react-us-state-map](https://npmjs.com/package/react-map-usa) package, in fact the initial SVG class system is based on it.
