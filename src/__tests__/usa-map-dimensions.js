@@ -10,11 +10,16 @@ describe("Component: USAMap", () => {
   let element;
   let componentProps;
   let onClickMock;
+  let onMouseOverMock;
   let customisedClickHandleMock;
+  let customisedMouseOverHandleMock;
 
   beforeEach(() => {
     onClickMock = jest.fn();
+    onMouseOverMock = jest.fn();
     customisedClickHandleMock = jest.fn();
+    customisedMouseOverHandleMock = jest.fn();
+
     componentProps = {
       width: 959,
       height: 593,
@@ -29,17 +34,20 @@ describe("Component: USAMap", () => {
           clickHandler: customisedClickHandleMock,
         }
       },
-      onClick: onClickMock
+      onClick: onClickMock,
+      onMouseOver: onMouseOverMock
     };
     element = shallow(<USAMap {...componentProps} />);
   });
 
   afterEach(() => {
     onClickMock.mockReset();
+    onMouseOverMock.mockReset();
   });
 
   it("should render all states based on `usa-map-dimensions` file", () => {
     expect(onClickMock.mock.calls.length).toEqual(0);
+    expect(onMouseOverMock.mock.calls.length).toEqual(0);
     const statesLength = element.find("USAState").length;
     expect(Object.keys(data).length).toEqual(statesLength);
   });
@@ -55,6 +63,14 @@ describe("Component: USAMap", () => {
     state.simulate("click");
     expect(onClickMock.mock.calls[0]).toEqual([undefined]);
     expect(customisedClickHandleMock.mock.calls.length).toEqual(0);
+  });
+
+  it("should calls `onMouseOver` when the component is moused over", () => {
+    expect(onMouseOverMock.mock.calls.length).toEqual(0);
+    const state = element.find(".state .DC2");
+    state.simulate("mouseover");
+    expect(onMouseOverMock.mock.calls[0]).toEqual([undefined]);
+    expect(customisedMouseOverHandleMock.mock.calls.length).toEqual(0);
   });
 
   it("should calls customise method is customise property has click handler", () => {
